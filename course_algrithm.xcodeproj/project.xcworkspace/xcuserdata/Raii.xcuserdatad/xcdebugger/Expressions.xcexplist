@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "AGKnapsackDP::SolveUseRecursion(int, std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;&amp;, int&amp;):zokp.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "resultVector">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AGSampleDataGenerater::Init(int, int, float):zokp.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "AGKnapsackDP::evaluateSetup(std::__1::vector&lt;AGSampleDataGenerater::ProductAttr, std::__1::allocator&lt;AGSampleDataGenerater::ProductAttr&gt; &gt;&amp;, int**&amp;, int, int):zokp.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "AGKnapsackDP::evaluateRecursion(std::__1::vector&lt;AGSampleDataGenerater::ProductAttr, std::__1::allocator&lt;AGSampleDataGenerater::ProductAttr&gt; &gt;&amp;, std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;&amp;, int, float):zokp.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "AGKnapsackDP::evaluateRecursion(std::__1::vector&lt;AGSampleDataGenerater::ProductAttr, std::__1::allocator&lt;AGSampleDataGenerater::ProductAttr&gt; &gt;&amp;, std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;&amp;, int**&amp;, int, int):zokp.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "pValueTable[1][20]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AGKnapsackDP::evaluateUseRecursion(std::__1::vector&lt;AGSampleDataGenerater::ProductAttr, std::__1::allocator&lt;AGSampleDataGenerater::ProductAttr&gt; &gt;&amp;, std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;&amp;, int, int):zokp.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "n">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
