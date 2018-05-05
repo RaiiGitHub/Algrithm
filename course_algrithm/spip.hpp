@@ -19,6 +19,7 @@
 #define RADIAN_TO_DEGREE(R) R*180.f/pi
 #define RANDOM_ANGLE_RADIAN() DEGREE_TO_RADIAN(rand()%360)
 #define RANDOM_POINT_WEIGHT 0.001f+rand()%1000/1000.f
+#define RANDOM_POINT_Z 0.001f+rand()%1000/100.f
 #define EQUAL_ZERO_WITH_TOLERANCE(A,B) 1.e-6f >= fabsf(A-B)
 
 class AGSolvePointCenter
@@ -31,10 +32,11 @@ public:
     {
         float x;
         float y;
+        float z;
         float w;//weight
-        SPoint():x(0.f),y(0.f),w(0.f){}
-        SPoint(float _x,float _y,float _w):x(_x),y(_y),w(_w){}
-        float distance(const SPoint& pt) const
+        SPoint():x(0.f),y(0.f), z(0.f),w(0.f){}
+        SPoint(float _x,float _y, float _z, float _w):x(_x),y(_y),z(_z),w(_w){}
+        float distanceSurface(const SPoint& pt) const
         {
             return sqrt(pow(pt.x - x, 2.f)+pow(pt.y -y, 2.f));
         }
@@ -47,7 +49,7 @@ public:
     {
         for(int i = 0; i < nDataNum; ++i )
         {
-            SPoint center(rand()%nMaxRange, rand()%nMaxRange, RANDOM_POINT_WEIGHT);
+            SPoint center(rand()%nMaxRange, rand()%nMaxRange, RANDOM_POINT_Z,RANDOM_POINT_WEIGHT);
             float r = rand()%10;
             while(0 == r)
                 r = rand()%10;
@@ -61,7 +63,7 @@ public:
         // x = radius * cos(zita)
         // y = radius * sin(zita);
         float zita = RANDOM_ANGLE_RADIAN();//a random radian
-        return SPoint(radius*cos(zita),radius*sin(zita),RANDOM_POINT_WEIGHT);
+        return SPoint(radius*cos(zita),radius*sin(zita),RANDOM_POINT_Z,RANDOM_POINT_WEIGHT);
     }
     
     void addPoint(const SPoint& pt){m_vPoints.push_back(pt);}
@@ -72,7 +74,7 @@ public:
     {
         for(auto& pt:m_vPoints)
         {
-            if( pt.distance(center) <= radius )
+            if( pt.distanceSurface(center) <= radius )
                 points.push_back(pt);
         }
         return points.size();
@@ -82,9 +84,9 @@ public:
     {
         for(auto& _pt:m_vPoints)
         {
-            if( EQUAL_ZERO_WITH_TOLERANCE(_pt.x,pt.x) )
+            if( EQUAL_ZERO_WITH_TOLERANCE(_pt.distanceSurface(pt),0.f) )
             {
-                pt.y = _pt.y;
+                pt.z = _pt.z;
                 pt.w = _pt.w;
                 return true;
             }
@@ -121,14 +123,14 @@ public:
             return true;
         }
         //do the interpolation
-        pt.y = 0;
+        pt.z = 0;
         pt.w = 0;
         for(auto& _pt:points)
         {
-            pt.y += _pt.y*_pt.w;//use average with weight.
+            pt.z += _pt.z*_pt.w;//use average with weight.
             pt.w += _pt.w;//use average weight.
         }
-        pt.y /= points.size();
+        pt.z /= points.size();
         pt.w /= points.size();
         return true;
     }
@@ -143,27 +145,28 @@ void solveSurfaceInterpolateProblem()
     AGSurfacePointInterpolating agspip;
     agspip.init();
     float x = rand()%100;
-    AGSolvePointCenter::SPoint pt(x,0.f,0.f);
+    float y = rand()%100;
+    AGSolvePointCenter::SPoint pt(x,y,0.f,0.f);
     bool bHasPoint = agspip.getDataCenter().getPoint(pt);
     std::cout<<"Surface interpolation: with random experimental datas\n";
     std::cout<<"Data size current:"<<agspip.getDataCenter().getDataSize()<<std::endl;
-    std::cout<<"Point at x="<<x<<","<<(bHasPoint?"exsit.":"not exsit.")<<std::endl;
+    std::cout<<"Point at ("<<x<<","<<y<<") "<<(bHasPoint?"exsit.":"not exsit.")<<std::endl;
     
     //do interpolate.
-    std::cout<<"Here will do interpolating 50 times.\n";
-    for(int i = 0; i < 50; ++i )
+    std::cout<<"Here will do interpolating 500 times.\n";
+    for(int i = 0; i < 500; ++i )
     {
         pt.x = rand()%100;//random again.
-        AGSolvePointCenter::SPoint center(rand()%100, rand()%100, RANDOM_POINT_WEIGHT);
+        AGSolvePointCenter::SPoint center(rand()%100, rand()%100, RANDOM_POINT_Z, RANDOM_POINT_WEIGHT);
         AGSolvePointCenter::PointArray points;
         float r = rand()%10;
         while(0 == r)
             r = rand()%10;
         
         if( agspip.doInterpolate(r, center, pt, points))
-            std::cout<<"Interplate a point: ("<<pt.x<<","<<pt.y<<","<<pt.w<<"), use the circle range: center("<<center.x<<","<<center.y<<"),radius="<<r<<", there are "<<points.size()<<" points in the range.\n";
+            std::cout<<"Interplate a point(x,y,z,w): ("<<pt.x<<","<<pt.y<<","<<pt.z<<","<<pt.w<<"), use the circle range: center("<<center.x<<","<<center.y<<"),radius="<<r<<", in range points: "<<points.size()<<"\n";
         else
-            std::cout<<"the point is already exist: ("<<pt.x<<","<<pt.y<<","<<pt.w<<")\n";
+            std::cout<<"the point is already exist: ("<<pt.x<<","<<pt.y<<","<<pt.z<<","<<pt.w<<")\n";
     }
     
 }
