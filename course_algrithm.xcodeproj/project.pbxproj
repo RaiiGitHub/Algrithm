@@ -26,6 +26,22 @@
 		355231812095912000E1065E /* course_algrithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = course_algrithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		355231842095912000E1065E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3552318F20959D7100E1065E /* zokp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = zokp.hpp; sourceTree = "<group>"; };
+		35523193209BDDD400E1065E /* Interpolater.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Interpolater.hpp; sourceTree = "<group>"; };
+		35523197209BEDE800E1065E /* AxisAngle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AxisAngle.hpp; path = course_algrithm/matrix/AxisAngle.hpp; sourceTree = SOURCE_ROOT; };
+		35523198209BEDE800E1065E /* Matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Matrix.hpp; path = course_algrithm/matrix/Matrix.hpp; sourceTree = SOURCE_ROOT; };
+		35523199209BEDE800E1065E /* Scalar.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scalar.hpp; path = course_algrithm/matrix/Scalar.hpp; sourceTree = SOURCE_ROOT; };
+		3552319A209BEDE800E1065E /* stdlib_imports.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = stdlib_imports.hpp; path = course_algrithm/matrix/stdlib_imports.hpp; sourceTree = SOURCE_ROOT; };
+		3552319B209BEDE800E1065E /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector.hpp; path = course_algrithm/matrix/Vector.hpp; sourceTree = SOURCE_ROOT; };
+		3552319C209BEDE800E1065E /* math.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = math.hpp; path = course_algrithm/matrix/math.hpp; sourceTree = SOURCE_ROOT; };
+		3552319D209BEDE800E1065E /* helper_functions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = helper_functions.hpp; path = course_algrithm/matrix/helper_functions.hpp; sourceTree = SOURCE_ROOT; };
+		3552319E209BEDE800E1065E /* Vector2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector2.hpp; path = course_algrithm/matrix/Vector2.hpp; sourceTree = SOURCE_ROOT; };
+		3552319F209BEDE800E1065E /* SquareMatrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SquareMatrix.hpp; path = course_algrithm/matrix/SquareMatrix.hpp; sourceTree = SOURCE_ROOT; };
+		355231A0209BEDE800E1065E /* integration.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = integration.hpp; path = course_algrithm/matrix/integration.hpp; sourceTree = SOURCE_ROOT; };
+		355231A1209BEDE800E1065E /* Quaternion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Quaternion.hpp; path = course_algrithm/matrix/Quaternion.hpp; sourceTree = SOURCE_ROOT; };
+		355231A2209BEDE800E1065E /* filter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = filter.hpp; path = course_algrithm/matrix/filter.hpp; sourceTree = SOURCE_ROOT; };
+		355231A3209BEDE800E1065E /* Vector3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector3.hpp; path = course_algrithm/matrix/Vector3.hpp; sourceTree = SOURCE_ROOT; };
+		355231A4209BEDE800E1065E /* Dcm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Dcm.hpp; path = course_algrithm/matrix/Dcm.hpp; sourceTree = SOURCE_ROOT; };
+		355231A5209BEDE800E1065E /* Euler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Euler.hpp; path = course_algrithm/matrix/Euler.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +74,35 @@
 		355231832095912000E1065E /* course_algrithm */ = {
 			isa = PBXGroup;
 			children = (
+				35523196209BEDD100E1065E /* matrix */,
 				355231842095912000E1065E /* main.cpp */,
 				3552318F20959D7100E1065E /* zokp.hpp */,
+				35523193209BDDD400E1065E /* Interpolater.hpp */,
 			);
 			path = course_algrithm;
+			sourceTree = "<group>";
+		};
+		35523196209BEDD100E1065E /* matrix */ = {
+			isa = PBXGroup;
+			children = (
+				35523197209BEDE800E1065E /* AxisAngle.hpp */,
+				355231A4209BEDE800E1065E /* Dcm.hpp */,
+				355231A5209BEDE800E1065E /* Euler.hpp */,
+				355231A2209BEDE800E1065E /* filter.hpp */,
+				3552319D209BEDE800E1065E /* helper_functions.hpp */,
+				355231A0209BEDE800E1065E /* integration.hpp */,
+				3552319C209BEDE800E1065E /* math.hpp */,
+				35523198209BEDE800E1065E /* Matrix.hpp */,
+				355231A1209BEDE800E1065E /* Quaternion.hpp */,
+				35523199209BEDE800E1065E /* Scalar.hpp */,
+				3552319F209BEDE800E1065E /* SquareMatrix.hpp */,
+				3552319A209BEDE800E1065E /* stdlib_imports.hpp */,
+				3552319B209BEDE800E1065E /* Vector.hpp */,
+				3552319E209BEDE800E1065E /* Vector2.hpp */,
+				355231A3209BEDE800E1065E /* Vector3.hpp */,
+			);
+			name = matrix;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
