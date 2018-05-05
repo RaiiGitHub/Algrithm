@@ -10,6 +10,7 @@
 #include <vector>
 #include "zokp.hpp"
 #include "Interpolater.hpp"
+#include "spip.hpp"
 
 class Algrithm
 {
@@ -19,7 +20,7 @@ public:
 public:
     void sayHelloToProfessor()
     {
-        std::cout<<"It's an honor to be here, my respected professor, as one of your students, saying hello to you.\nKnapsack problem Solved(Using Random Experimental Datas):\n";
+        std::cout<<"It's an honor to be here, my respected professor, as one of your students, saying hello to you.\n";
     }
 };
 
@@ -28,8 +29,8 @@ int main(int argc, const char * argv[]) {
     Algrithm ag;
     ag.sayHelloToProfessor();
     
-    //SolveKnapsackProblem();
-    SolveInterpolateProblem();
-
+    //solveKnapsackProblem();
+    solveInterpolateProblem();
+    solveSurfaceInterpolateProblem();
     return 0;
 }

@@ -42,6 +42,7 @@
 		355231A3209BEDE800E1065E /* Vector3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Vector3.hpp; path = course_algrithm/matrix/Vector3.hpp; sourceTree = SOURCE_ROOT; };
 		355231A4209BEDE800E1065E /* Dcm.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Dcm.hpp; path = course_algrithm/matrix/Dcm.hpp; sourceTree = SOURCE_ROOT; };
 		355231A5209BEDE800E1065E /* Euler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Euler.hpp; path = course_algrithm/matrix/Euler.hpp; sourceTree = SOURCE_ROOT; };
+		355231A7209D35EC00E1065E /* spip.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = spip.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 				355231842095912000E1065E /* main.cpp */,
 				3552318F20959D7100E1065E /* zokp.hpp */,
 				35523193209BDDD400E1065E /* Interpolater.hpp */,
+				355231A7209D35EC00E1065E /* spip.hpp */,
 			);
 			path = course_algrithm;
 			sourceTree = "<group>";

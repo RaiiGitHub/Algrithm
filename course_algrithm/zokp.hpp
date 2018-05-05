@@ -85,7 +85,7 @@ protected:
     std::map<int,std::vector<int>> m_mSolveResults;
     int m_nKnapsackCapacity;
 public:
-    void Init(int nSampeAmount = 600, int nProductAmount = 10, int nKnapsackCapacity = 11)
+    void init(int nSampeAmount = 600, int nProductAmount = 10, int nKnapsackCapacity = 11)
     {
         //the single weight in samples is no more than the input fKnapsackCapactiy.
         //consider a const random range for the values.
@@ -554,18 +554,18 @@ public:
     }
 };
 
-void SolveKnapsackProblem()
+void solveKnapsackProblem()
 {
     AGKnapsackDP agdp;
     AGKnapsackKSetImprove agksi;
     
-    AGSampleDataGenerater::getSingleton()->Init(100,10,11);
+    AGSampleDataGenerater::getSingleton()->init(100,10,11);
     
     //sort to improve the solving speed.
     AGSampleDataGenerater::getSingleton()->sort();
     
     int nSampeCount = AGSampleDataGenerater::getSingleton()->getSampleCount();
-    
+    std::cout<<"Knapsack problem Solved(Using Random Experimental Datas):\n";
     std::cout<<"---------------use fill-table(DP) method-------------\n";
     for(int i = 0; i < nSampeCount; ++i)
     {

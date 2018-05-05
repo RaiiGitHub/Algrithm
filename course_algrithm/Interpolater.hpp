@@ -217,10 +217,11 @@ std::cout<<"\nf("<<INTERPOLATE_VAL<<")="<<agip.getPredictMassWithM2DM_m8n##N(INT
 }\
 
 
-void SolveInterpolateProblem()
+void solveInterpolateProblem()
 {
     AGInterpolater agip;
     agip.setupDefaultData();
+    std::cout<<"Interplating problem Solved:\n";
     std::cout<<"Using Inner-Interpolating method: Linear regression\n";
     float a = 0;
     float b = 0;
